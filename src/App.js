@@ -1,19 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-import Weather from "./Weather";
+import React from "react";
+import ReactDOM from "react-dom";
 
-function App() {
+import "./App.css";
+import Weather from "./Weather.js";
+
+export default function Search() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>
-          Hello World!
-        </h1>
-        <Weather city="Barcelona"/>
-      </header>
+    <div className="Search">
+      <h1>Weather Search Engine</h1>
+      <Weather />
     </div>
   );
 }
 
-export default App;
+const rootElement = document.getElementById("root");
+ReactDOM.render(
+  <React.StrictMode>
+    <Search />
+  </React.StrictMode>,
+  rootElement
+);
